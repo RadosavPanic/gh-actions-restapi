@@ -9,14 +9,12 @@ on:
 env:
   MONGODB_DB_NAME: ${{ secrets.MONGODB_DB_NAME }}
   PORT: ${{ secrets.PORT }}
+  MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
+  MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
+  MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS}}
 
 jobs:
   test:
-    env:
-      MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
-      MONGODB_PASSWORD: ${{ secrets.MONGODB_PASSWORD }}
-      MONGODB_CLUSTER_ADDRESS: ${{ secrets.MONGODB_CLUSTER_ADDRESS}}
-
     runs-on: ubuntu-latest
     steps:
       - name: Get Code
