@@ -1,4 +1,4 @@
-name: Deployment
+name: Deployment on container
 
 on:
   push:
@@ -39,7 +39,7 @@ jobs:
           key: npm-deps-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
+        # if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Run server
